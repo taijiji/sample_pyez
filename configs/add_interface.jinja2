@@ -1,12 +1,10 @@
 interfaces {
    {{ if_name }} {
-        unit 0 {
-            description {{ description }};
-            {% if ipv4_address %}
+        unit 0 {            
+            description {{ if_description }};
             family inet {
                 address {{ if_address_ipv4 }}/{{ if_subnet_ipv4 }};
             }
-            {% endif %}
         }
     }
 } 

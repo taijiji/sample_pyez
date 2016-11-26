@@ -7,7 +7,7 @@ from jnpr.junos.utils.config import Config
 
 # color font
 import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore
 
 colorama.init(autoreset=True)
 
@@ -29,9 +29,13 @@ print Fore.YELLOW + dev1.facts["hostname"]
 dev1.bind(cu=Config)
 
 print "Load config : ",
-dev1.cu.lock()
 conf_filename = "./configs/change_hostname.conf"
-dev1.cu.load(path=conf_filename, format="text", merge=True)
+dev1.cu.lock()
+dev1.cu.load(
+    path=conf_filename,
+    format="text", # you can select text or set style
+    merge=True
+)
 print Fore.GREEN + "OK" 
 
 print "Target config : %s" % (conf_filename)
