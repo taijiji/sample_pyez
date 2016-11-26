@@ -24,7 +24,7 @@ dev1.open()
 print Fore.GREEN + "OK"
 
 print "Hostname : ",
-print dev1.facts["hostname"]
+print Fore.YELLOW + dev1.facts["hostname"]
 
 dev1.bind(cu=Config)
 
@@ -65,7 +65,7 @@ dev1.close()
 
 dev1.open()
 print "Hostname : ",
-print dev1.facts["hostname"]
+print Fore.YELLOW + dev1.facts["hostname"]
 dev1.close()
 
 print "##### Operation : End #####"
