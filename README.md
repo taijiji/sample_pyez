@@ -12,6 +12,7 @@ python set_firefly1_change_hostname.py
 output
 
 ```                                                                                                                                                   (git)-[master]
+% python set_firefly1_change_hostname.py                                                                                                                                                 (git)-[master]
 ##### Operation : Start #######
 Connecting to device :  OK
 Hostname :  firefly1
@@ -35,4 +36,5 @@ Do you commit? y/n
 y
 Commit candidate config : OK
 Hostname :  firefly1_changed_by_PyEZ
+##### Operation : End #####
 ```

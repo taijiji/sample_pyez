@@ -68,6 +68,4 @@ print "Hostname : ",
 print dev1.facts["hostname"]
 dev1.close()
 
-
-
-"##### Operation : End #####"
+print "##### Operation : End #####"
