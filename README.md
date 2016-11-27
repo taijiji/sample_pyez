@@ -3,7 +3,7 @@ Sample code for using Juniper PyEZ
 
 
 ## sample code 1 : change hostname
-How to run sample code 1
+How to run
 
 ```
 python set_firefly1_change_hostname.py
@@ -12,7 +12,8 @@ python set_firefly1_change_hostname.py
 output
 
 ```                                                                                                                                                   (git)-[master]
-% python set_firefly1_change_hostname.py                                                                                                                                                 (git)-[master]
+% python set_firefly1_change_hostname.py
+                                                                                                                                              (git)-[master]
 ##### Operation : Start #######
 Connecting to device :  OK
 Hostname :  firefly1
@@ -41,13 +42,15 @@ Hostname :  firefly1_changed_by_PyEZ
 
 ## sample code 2 : add interface using Jinja2 Template
 
-How to run sample code 1
+How to run
 
 ```
 python set_firefly1_add_interface.py 
 ```
 
-```                                                                                                                                                      (git)-[master]
+```
+% python set_firefly1_add_interface.py 
+                                                                                                                                                (git)-[master]
 ##### Operation : Start #######
 Connecting to device :  OK
 Hostname :  firefly1
