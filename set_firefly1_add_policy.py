@@ -20,9 +20,9 @@ print "##### Operation : Start #######"
 
 print "Connecting to device : ",
 dev1 = Device(
-            host="192.168.34.16",
-            user="user1",
-            password="password1"
+            host        = "192.168.34.16",
+            user        = "user1",
+            password    = "password1"
         )   
 dev1.open()
 print Fore.GREEN + "OK"
@@ -33,18 +33,18 @@ print Fore.YELLOW + dev1.facts["hostname"]
 dev1.bind(cu=Config)
 
 print "Load config : ",
-template_filename = "./configs/add_bgp_neighbor.jinja2"
-param_bgp_neighbor = {
-    "local_asnum"          : "65001",
-    "interface_name"        : "ge-0/0/2",
-    "neighbor_asnum"        : "65002",
-    "neighbor_address_ipv4" : "192.168.35.2",
-    "neighbor_description"  : "AS65002_add_by_PyEZ"
+template_filename = "./configs/add_policy.jinja2"
+param_add_policy = {
+    "policy_name"               : "AS65002_export_policy_add_by_PyEZ",
+    "advertised_address_ipv4"   : "10.10.10.0",
+    "advertised_subnet_ipv4"    : "24",
+    "interface_name"            : "ge-0/0/2",
+    "neighbor_address_ipv4"    : "192.168.35.2"
 }
 dev1.cu.lock()
 dev1.cu.load(
     template_path   = template_filename, 
-    template_vars   = param_bgp_neighbor, 
+    template_vars   = param_add_policy, 
     format          = "text",
     merge           = True
 )
@@ -54,7 +54,7 @@ print "Target config : "
 print "#"*30
 with open(template_filename, 'r') as conf:
     template_txt = conf.read()
-    print Environment().from_string(template_txt).render(param_bgp_neighbor)
+    print Environment().from_string(template_txt).render(param_add_policy)
 
 print "#"*30
 

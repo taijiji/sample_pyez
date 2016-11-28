@@ -45,7 +45,7 @@ dev1.bind(cu=Config)
 print "Load config : "
 template_filename = "./configs/add_interface.jinja2"
 param_interface = {
-    'interface_name'           : 'ge-0/0/5',
+    'interface_name'           : 'ge-0/0/3',
     'interface_description'    : 'add_by_PyEZ',
     'interface_address_ipv4'   : '192.168.35.1',
     'interface_subnet_ipv4'    : '30'
@@ -54,8 +54,8 @@ dev1.cu.lock()
 dev1.cu.load(
     template_path   = template_filename, 
     template_vars   = param_interface, 
-    format="text", # you can select text or set style
-    merge=True
+    format          = "text", # you can select text or set style
+    merge           = True
 )
 print(Fore.GREEN + 'OK')
 
