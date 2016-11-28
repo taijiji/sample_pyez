@@ -17,7 +17,6 @@ print "Connecting to device : ",
 dev1 = Device(
             host="192.168.34.16",
             user="user1",
-            port=22, # NETCONF port (defaults to 830)
             password="password1"
         )   
 dev1.open()
